@@ -2,13 +2,13 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
-           'us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/my-docker-repo/myimage', 
+           'us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/a2a-langgrapgh-r/myimage', 
            '.']
 
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 
-           'us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/my-docker-repo/myimage']
+           'us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/a2a-langgrapgh-r/myimage']
 
   # Entrypoint, timeout and environment variables
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -17,7 +17,7 @@ steps:
     args: ['compute', 'instances', 
            'create-with-container', 'my-vm-name',
            '--container-image', 
-           'us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/my-docker-repo/myimage']
+           'us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/us-central1-docker.pkg.dev/gebu-data-ml-day0-01-333910/a2a-langgrapgh-r/myimage']
     env:
       - 'CLOUDSDK_COMPUTE_REGION=us-central1'
       - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
