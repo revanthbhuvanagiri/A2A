@@ -2,17 +2,17 @@
 FROM python:3.12-slim
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /samples/python/agents/langgraph
 
 # Copy the current directory contents into the container
-COPY . /app
+#COPY . /app
 
 # Install system dependencies for any packages that might require compilation
 RUN apt-get update && apt-get install -y build-essential
 
 # Install Python dependencies
 RUN pip install --upgrade pip
-RUN pip install -r /app/requirements.txt
+RUN pip install -r requirements.txt
 
 # Set environment variables from the .env file
 COPY .env .env
